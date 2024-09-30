@@ -6,8 +6,8 @@ from dash import Dash, dcc, html, Input, Output  # pip install dash (version 2.0
 app = Dash(__name__)
 
 # -- Import and clean data (importing csv into pandas)
-df = pd.read_csv("Dataset/intro_bees.csv")
-#df = pd.read_csv("https://raw.githubusercontent.com/LubangaD/beesurveydashboard/refs/heads/main/Dataset/intro_bees.csv")
+#df = pd.read_csv("Dataset/intro_bees.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/LubangaD/beesurveydashboard/refs/heads/main/Dataset/intro_bees.csv")
 
 df = df.groupby(['State', 'ANSI', 'Affected by', 'Year', 'state_code'])[['Pct of Colonies Impacted']].mean()
 df.reset_index(inplace=True)
